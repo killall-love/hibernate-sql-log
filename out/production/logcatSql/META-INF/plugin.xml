@@ -1,0 +1,48 @@
+<idea-plugin>
+  <id>com.xiaolan.hibernate.tools</id>
+  <name>Hibernate Sql Log-烟花小神</name>
+  <version>1.0</version>
+  <vendor email="1347229508@qq.com" url="http://lan666.top">作者：烟花小神</vendor>
+  <description><![CDATA[
+    作者：烟花小神
+    QQ: 1347229508
+    Hibernate SQL 打印输入到 Win桌面  log.sql
+    如何抓取SQL
+    1.右键选择  清空
+    2.请求你的接口
+    3.右键 输出
+    4.根据路径查找
+    ]]></description>
+  <change-notes><![CDATA[
+    作者：烟花小神
+    QQ: 1347229508
+    Hibernate SQL 打印输入到 Win桌面  log.sql
+    如何抓取SQL
+    1.右键选择  清空
+    2.请求你的接口
+    3.右键 输出
+    4.根据路径查找
+    ]]>
+  </change-notes>
+  <idea-version since-build="173.0"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <consoleFilterProvider implementation="com.xiaolan.hibernate.tools.MyConsoleFilterProvider"/>
+  </extensions>
+
+  <actions>
+      <action id="ShowAction"
+              class="com.xiaolan.hibernate.tools.action.ShowAction"
+              text="Hibernate Sql Log-烟花小神 输出"
+              description="Hibernate Sql Log-烟花小神 输出">
+          <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      </action>
+      <action id="ClearAction"
+              class="com.xiaolan.hibernate.tools.action.ClearAction"
+              text="Hibernate Sql Log-烟花小神 清空"
+              description="Hibernate Sql Log-烟花小神 清空">
+          <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      </action>
+
+  </actions>
+
+</idea-plugin>
