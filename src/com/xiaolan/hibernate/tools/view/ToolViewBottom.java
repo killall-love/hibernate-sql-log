@@ -69,7 +69,7 @@ public class ToolViewBottom  {
     }
 
     private void init() {
-        outPut = new JButton("输出");
+        outPut = new JButton("停止监听");
         clean = new JButton("清除");
         myToolWindowContent = new JPanel();
         myToolWindowContent.setLayout(new BorderLayout());

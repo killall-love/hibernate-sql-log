@@ -19,9 +19,9 @@ public class ShowOut {
     public static StringBuffer init(){
         if (Model.getSb().toString().isEmpty()) return null;
         StringBuffer author= new StringBuffer();
-        author.append("--Author: 烟花小神\r\n");
-        author.append("--Version: 1.0\r\n");
-        author.append("--ProjectName: logcatSqlOut\r\n");
+        author.append("-- Author: 烟花小神\r\n");
+        author.append("-- Version: 1.0\r\n");
+        author.append("-- ProjectName: logcatSqlOut\r\n");
         StringBuffer sb = new StringBuffer();
         String[] split = Model.getSb().toString().split("Hibernate: ");
         String yyyyMMdd = new SimpleDateFormat("yyyyMMdd").format(new Date());
@@ -29,7 +29,7 @@ public class ShowOut {
             String[] split1 = s1.split("-" + yyyyMMdd);
             if(!split1[0].isEmpty()){
                 sb.append(split1[0]);
-                sb.append("\r\n-----------------\r\n");
+                sb.append("\r\n-- ---------------\r\n");
             }
         }
         if (!sb.toString().isEmpty()){
