@@ -13,6 +13,8 @@ public class Model {
 
     private static StringBuffer sb = new StringBuffer();
 
+    private static Boolean state = false;
+
     public static StringBuffer getSb() {
         return sb;
     }
@@ -22,5 +24,16 @@ public class Model {
     }
     public static void init() {
         sb = new StringBuffer();
+    }
+
+    public static Boolean getState() {
+        return state;
+    }
+
+    public static void close() {
+        Model.state = false;
+    }
+    public static void open() {
+        Model.state = true;
     }
 }

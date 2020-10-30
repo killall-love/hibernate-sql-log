@@ -2,10 +2,6 @@ package com.xiaolan.hibernate.tools.click;
 
 import com.xiaolan.hibernate.tools.data.Model;
 
-import javax.swing.filechooser.FileSystemView;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,10 +16,8 @@ import java.util.Date;
  */
 public class ShowOut {
 
-    private static File fsv = FileSystemView.getFileSystemView().getHomeDirectory();
-
-    public static void init(){
-        if (Model.getSb().toString().isEmpty()) return;
+    public static StringBuffer init(){
+        if (Model.getSb().toString().isEmpty()) return null;
         StringBuffer author= new StringBuffer();
         author.append("--Author: 烟花小神\r\n");
         author.append("--Version: 1.0\r\n");
@@ -40,19 +34,9 @@ public class ShowOut {
         }
         if (!sb.toString().isEmpty()){
             sb.insert(0,author);
-            String path = fsv.getPath();
-            FileWriter fileWriter = null;
-            try {
-                fileWriter = new FileWriter(path+"/log.sql");//创建文本文件
-                fileWriter.write(sb.toString());
-                fileWriter.flush();
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                Model.init();
-            }
+            return sb;
         }
+        return null;
     }
 
 }
