@@ -28,8 +28,10 @@ public class ShowOut {
         for (String s1 : split) {
             String[] split1 = s1.split("-" + yyyyMMdd);
             if(!split1[0].isEmpty()){
-                sb.append(split1[0]);
-                sb.append("\r\n-- ---------------\r\n");
+                if (split1[0].contains("from")){
+                    sb.append(split1[0]);
+                    sb.append("\r\n-- ---------------\r\n");
+                }
             }
         }
         if (!sb.toString().isEmpty()){
